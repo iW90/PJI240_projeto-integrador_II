@@ -1,4 +1,4 @@
-﻿namespace OrcamentoEletrico.Models.Requests
+﻿namespace OrcamentoEletricoApp.Models.Requests
 {
     public class PessoaRequest
     {

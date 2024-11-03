@@ -1,6 +1,6 @@
 ﻿using static OrcamentoEletricoDomain.Enums.ClassificacaoPadrao;
 
-namespace OrcamentoEletrico.Models.Requests
+namespace OrcamentoEletricoApp.Models.Requests
 {
     public class ImovelRequest
     {

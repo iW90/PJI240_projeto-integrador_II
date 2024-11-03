@@ -1,4 +1,4 @@
-﻿namespace OrcamentoEletrico.Models.Responses
+﻿namespace OrcamentoEletricoApp.Models.Responses
 {
     public class ImovelResponse
     {

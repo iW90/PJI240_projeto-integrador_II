@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using OrcamentoEletrico.Models.Requests;
-using OrcamentoEletrico.Models.Responses;
+using OrcamentoEletricoApp.Models.Requests;
+using OrcamentoEletricoApp.Models.Responses;
 using OrcamentoEletricoDomain.Entities;
 using OrcamentoEletricoDomain.Interfaces;
 

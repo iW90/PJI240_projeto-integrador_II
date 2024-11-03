@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using OrcamentoEletricoDomain.Entities;
-using OrcamentoEletrico.Models.Requests;
+using OrcamentoEletricoApp.Models.Requests;
 
 namespace OrcamentoEletricoApp.Mappings
 {
