@@ -6,7 +6,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "nomeCompleto": "João da Silva",
+  "nomeCompleto": "Joao da Silva",
   "email": "joao.silva@example.com",
   "telefone": "(11) 98765-4321",
   "endereco": "Rua Exemplo, 123"
@@ -20,13 +20,13 @@ Content-Type: application/json
   "pessoaId": 1
 }
 
-### Cadastrar Imóvel
+### Cadastrar Imovel
 POST {{OrcamentoEletrico_HostAddress}}/api/orcamento/gerar-orcamento
 Content-Type: application/json
 Accept: application/json
 
 {
-  "nomeCompleto": "João da Silva",
+  "nomeCompleto": "Joao da Silva",
   "email": "joao.silva@example.com",
   "telefone": "(11) 98765-4321",
   "endereco": "Rua Exemplo, 123"
