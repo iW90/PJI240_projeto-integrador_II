@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using OrcamentoEletricoApp.Models.Requests;
 using OrcamentoEletricoApp.Models.Responses;
 using OrcamentoEletricoDomain.Entities;
-using OrcamentoEletricoDomain.Interfaces;
+using OrcamentoEletricoDomain.Interfaces.Services;
 
 namespace OrcamentoEletrico.Controllers
 {
@@ -11,10 +11,10 @@ namespace OrcamentoEletrico.Controllers
     [Route("api/[controller]")]
     public class PessoaController : BaseController
     {
-        private readonly ICadastrarPessoaService _cadastrarPessoaService;
+        private readonly IPessoaService _cadastrarPessoaService;
         private readonly IMapper _mapper;
 
-        public PessoaController(ICadastrarPessoaService cadastrarPessoaService, IMapper mapper)
+        public PessoaController(IPessoaService cadastrarPessoaService, IMapper mapper)
         {
             _cadastrarPessoaService = cadastrarPessoaService;
             _mapper = mapper;

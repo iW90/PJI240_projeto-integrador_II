@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
 using OrcamentoEletricoDomain.Entities;
-using OrcamentoEletricoDomain.Interfaces;
+using OrcamentoEletricoDomain.Interfaces.Repositories;
+using OrcamentoEletricoDomain.Interfaces.Services;
 using static OrcamentoEletricoDomain.Enums.ClassificacaoPadrao;
 
 namespace OrcamentoEletricoApp.Services
@@ -9,20 +10,30 @@ namespace OrcamentoEletricoApp.Services
     public class OrcamentoService : IOrcamentoService
     {
         private readonly ILogger<OrcamentoService> _logger;
+        private readonly IOrcamentoRepository _repository;
 
-        public OrcamentoService(ILogger<OrcamentoService> logger)
+        public OrcamentoService(ILogger<OrcamentoService> logger, IOrcamentoRepository repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         public async Task<decimal> gerarOrcamento(Imovel imovel)
         {
-            var valor = calcularOrcamento(imovel);
+            try
+            {
+                var valor = calcularOrcamento(imovel);
 
-            //cadastrar imovel
+                await _repository.AddImovel(imovel);
 
-            _logger.LogInformation("Cadastro de projeto realizado com sucesso.");
-            return valor;
+                _logger.LogInformation("Cadastro de projeto realizado com sucesso.");
+                return valor;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao tentar cadastrar imovel.");
+                throw;
+            }
         }
 
         public decimal calcularOrcamento(Imovel imovel)

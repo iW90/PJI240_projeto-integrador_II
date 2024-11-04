@@ -1,8 +1,8 @@
 ﻿using OrcamentoEletricoDomain.Entities;
 
-namespace OrcamentoEletricoDomain.Interfaces
+namespace OrcamentoEletricoDomain.Interfaces.Services
 {
-    public interface ICadastrarPessoaService
+    public interface IPessoaService
     {
         Task<int> cadastrarPessoa(Pessoa pessoa);
     }

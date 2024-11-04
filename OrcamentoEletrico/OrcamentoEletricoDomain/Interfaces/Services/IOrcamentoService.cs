@@ -1,6 +1,6 @@
 ﻿using OrcamentoEletricoDomain.Entities;
 
-namespace OrcamentoEletricoDomain.Interfaces
+namespace OrcamentoEletricoDomain.Interfaces.Services
 {
     public interface IOrcamentoService
     {
