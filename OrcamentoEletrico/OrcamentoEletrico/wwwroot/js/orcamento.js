@@ -14,7 +14,7 @@
     };
 
     try {
-        const response = await fetch('http://localhost:5014/api/orcamento/gerar-orcamento', {
+        const response = await fetch('http://localhost:7285/api/Orcamento/gerar-orcamento', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
