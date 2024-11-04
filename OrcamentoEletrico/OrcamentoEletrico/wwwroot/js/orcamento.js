@@ -12,9 +12,9 @@
         numeroDePavimentos: parseInt(numeroDePavimentos),
         classificacao: parseInt(classificacao)
     };
-
+    console.log(imovelData);
     try {
-        const response = await fetch('http://localhost:7285/api/Orcamento/gerar-orcamento', {
+        const response = await fetch('https://localhost:7285/api/Orcamento/gerar-orcamento', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

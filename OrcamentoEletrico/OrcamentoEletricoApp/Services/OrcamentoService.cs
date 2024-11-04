@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using OrcamentoEletricoDomain.Entities;
 using OrcamentoEletricoDomain.Interfaces.Repositories;
 using OrcamentoEletricoDomain.Interfaces.Services;
+using OrcamentoEletricoInfra.Repositories;
 using static OrcamentoEletricoDomain.Enums.ClassificacaoPadrao;
 
 namespace OrcamentoEletricoApp.Services
@@ -10,12 +11,14 @@ namespace OrcamentoEletricoApp.Services
     public class OrcamentoService : IOrcamentoService
     {
         private readonly ILogger<OrcamentoService> _logger;
-        private readonly IOrcamentoRepository _repository;
+        private readonly IOrcamentoRepository _orcamentoRepository;
+        private readonly IPessoaRepository _pessoaRepository;
 
-        public OrcamentoService(ILogger<OrcamentoService> logger, IOrcamentoRepository repository)
+        public OrcamentoService(ILogger<OrcamentoService> logger, IOrcamentoRepository orcamentoRepository, IPessoaRepository pessoaRepository)
         {
             _logger = logger;
-            _repository = repository;
+            _orcamentoRepository = orcamentoRepository;
+            _pessoaRepository = pessoaRepository;
         }
 
         public async Task<decimal> gerarOrcamento(Imovel imovel)
@@ -24,7 +27,9 @@ namespace OrcamentoEletricoApp.Services
             {
                 var valor = calcularOrcamento(imovel);
 
-                await _repository.AddImovel(imovel);
+                await _orcamentoRepository.AddImovel(imovel);
+
+                await _pessoaRepository.AdicionarProjetoPessoa(imovel.PessoaId, imovel);
 
                 _logger.LogInformation("Cadastro de projeto realizado com sucesso.");
                 return valor;

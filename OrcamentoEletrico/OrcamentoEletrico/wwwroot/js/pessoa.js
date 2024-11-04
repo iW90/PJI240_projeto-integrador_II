@@ -27,6 +27,7 @@
         }
 
         const data = await response.json();
+        console.log(data);
         document.getElementById('responseMessage').innerText = `Cadastro realizado com sucesso! ID: ${data.pessoaId}`;
     } catch (error) {
         document.getElementById('responseMessage').innerText = error.message;

@@ -21,12 +21,37 @@ namespace OrcamentoEletricoInfra.Repositories
             await _context.SaveChangesAsync();
         }
 
+        // Busca uma pessoa no banco através da Id
+        public async Task<Pessoa?> GetPessoaPorId(int pessoaId)
+        {
+            return await _context
+                .Pessoas
+                .FindAsync(pessoaId);
+        }
+
         // Busca uma pessoa no banco através do email
         public async Task<Pessoa?> GetPessoaPorEmail(string email)
         {
             return await _context
                 .Pessoas                    
                 .FirstOrDefaultAsync(x => x.Email.ToLower() == email.ToLower());
+        }
+
+        // Atualiza lista de imóveis de uma pessoa através da Id
+        public async Task AdicionarProjetoPessoa(int pessoaId, Imovel imovel)
+        {
+            var pessoa = await _context.Pessoas.FindAsync(pessoaId);
+
+            if (pessoa != null)
+            {
+                pessoa.AdicionarImovel(imovel);
+
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new InvalidOperationException("Pessoa not found.");
+            }
         }
     }
 }
