@@ -7,7 +7,7 @@
     <UserSecretsId>773f7442-b99a-4a68-80bb-678dae2ab017</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
-	<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\OrcamentoEletrico.xml</DocumentationFile>
+	<NoWarn>1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
