@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using OrcamentoEletricoApp.Models.Requests;
 using OrcamentoEletricoApp.Models.Responses;
 using OrcamentoEletricoDomain.Entities;
-using OrcamentoEletricoDomain.Interfaces;
 using OrcamentoEletricoDomain.Interfaces.Services;
 
 namespace OrcamentoEletrico.Controllers

@@ -14,7 +14,7 @@
     };
 
     try {
-        const response = await fetch('http://localhost:5000/api/pessoa/cadastrar-pessoa', {
+        const response = await fetch('http://localhost:5014/api/pessoa/cadastrar-pessoa', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
