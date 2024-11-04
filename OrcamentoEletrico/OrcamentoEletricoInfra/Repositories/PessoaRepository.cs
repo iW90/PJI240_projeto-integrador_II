@@ -50,7 +50,7 @@ namespace OrcamentoEletricoInfra.Repositories
             }
             else
             {
-                throw new InvalidOperationException("Pessoa not found.");
+                throw new InvalidOperationException("Pessoa não encontrada para cadastro de imóvel");
             }
         }
     }

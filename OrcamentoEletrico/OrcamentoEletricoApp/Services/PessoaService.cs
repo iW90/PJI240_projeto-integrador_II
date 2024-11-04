@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using OrcamentoEletricoDomain.Entities;
 using OrcamentoEletricoDomain.Interfaces.Repositories;
 using OrcamentoEletricoDomain.Interfaces.Services;
@@ -37,7 +36,7 @@ namespace OrcamentoEletricoApp.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Erro ao tentar cadastrar pessoa.");
-                throw;
+                throw new InvalidOperationException("Ocorreu um erro ao tentar cadastrar a pessoa.", ex);
             }
         }
     }
