@@ -16,7 +16,6 @@
             numeroDePavimentos,
             classificacao
         };
-        console.log(imovelData);
 
         try {
             const response = await fetch('https://localhost:7285/api/Orcamento/gerar-orcamento', {
@@ -33,7 +32,7 @@
 
             const data = await response.json();
             console.log(data);
-            document.getElementById('responseMessage').innerText = `Orçamento gerado com sucesso! Valor: R$${data.valorOrcamento.toFixed(2) }`;
+            document.getElementById('responseMessage').innerText = `Orçamento gerado com sucesso! Valor: R$${data.data}`;
         } catch (error) {
             document.getElementById('responseMessage').innerText = error.message;
         }

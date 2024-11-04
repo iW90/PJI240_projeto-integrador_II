@@ -27,9 +27,9 @@
         }
 
         const data = await response.json();
-        console.log(data);
-        document.getElementById('responseMessage').innerText = `Cadastro realizado com sucesso! ID: ${data.pessoaId}`;
-        window.location.href = `/Home/Orcamento?id=${data.pessoaId}`;
+
+        document.getElementById('responseMessage').innerText = `Cadastro realizado com sucesso! ID: ${data.data.pessoaId}`;
+        window.location.href = `/Home/Orcamento?id=${data.data.pessoaId}`;
     } catch (error) {
         document.getElementById('responseMessage').innerText = error.message;
     }
