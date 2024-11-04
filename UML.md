@@ -5,9 +5,9 @@
 - Código-fonte
 	```
 	@startuml
-	!theme reddress-darkblue
+	!theme vibrant
 
-	package RealEstate <<Rectangle>>
+	package - <<Rectangle>>
 	{
 		class Pessoa ##white
 		{
