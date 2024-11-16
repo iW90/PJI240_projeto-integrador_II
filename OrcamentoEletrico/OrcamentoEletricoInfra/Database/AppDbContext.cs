@@ -20,10 +20,14 @@ namespace OrcamentoEletricoInfra.Database
     }
 }
 
-// Na raiz do projeto:
-// Criar um migration (configuração do banco)
-// dotnet ef migrations add InitialCreate --startup-project ./OrcamentoEletrico/OrcamentoEletrico.csproj -p ./OrcamentoEletricoInfra/OrcamentoEletricoInfra.csproj
-
-// Atualizar banco com essa nova configuração:
-// dotnet ef database update --startup-project ./OrcamentoEletrico/OrcamentoEletrico.csproj -p ./OrcamentoEletricoInfra/OrcamentoEletricoInfra.csproj
-
+/*
+ * Executar comandos abaixo na raiz do projeto:
+ *      \PJI240_projeto-integrador_II\OrcamentoEletrico
+ * 
+ * Criar um migration (configuração do banco)
+ *      dotnet ef migrations add InitialCreate --startup-project ./OrcamentoEletrico/OrcamentoEletrico.csproj -p ./OrcamentoEletricoInfra/OrcamentoEletricoInfra.csproj
+ * 
+ * Atualizar banco com essa nova configuração:
+ *      dotnet ef database update --startup-project ./OrcamentoEletrico/OrcamentoEletrico.csproj -p ./OrcamentoEletricoInfra/OrcamentoEletricoInfra.csproj
+ * 
+ */
